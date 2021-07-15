@@ -1,0 +1,47 @@
+server:
+  port: 8080
+spring:
+  application:
+    name: getui-demo
+  datasource:
+    url: jdbc:mysql://10.10.66.154:3306/bfp2.0_dev?characterEncoding=utf8&useSSL=false&serverTimezone=Asia/Shanghai&allowMultiQueries=true
+    username: root
+    password: mysql_@bfp!#
+    type: com.zaxxer.hikari.HikariDataSource
+    hikari:
+      connection-test-query: SELECT 1
+      validation-timeout: 250
+      minimum-idle: 5
+      auto-commit: true
+      connection-timeout: 30000
+      idle-timeout: 30000
+      max-lifetime: 500000 #不小于30s 否则会回到默认的1800秒
+      maximum-pool-size: 15
+      pool-name: DatebookHikariCP
+  redis:
+    database: 0
+    host: 10.10.66.154  #单实例redis用这个配置
+    port: 6379  #单实例redis用这个配置
+    password: redis_repay
+    timeout: 5000ms
+    lettuce:
+      pool:
+        max-active: 100
+        max-wait: 15000ms
+        min-idle: 5
+
+mybatis-plus:
+  #如果是放在java下 classpath:/yourpackage/mapper/*Mapper.xml  如果是resource classpath:/mapper/*Mapper.xml
+  mapper-locations: classpath:/top/b0x0/gexin/mapper/*Mapper.xml
+  #多个package用逗号或者分号分隔
+  typeAliasesPackage: top.b0x0.gexin.domain
+  configuration:
+    map-underscore-to-camel-case: true
+    call-setters-on-nulls: true
+    cache-enabled: false
+  global-config:
+    enable-sql-runner: true
+    banner: false
+    db-config:
+      logic-delete-value: 0
+      logic-not-delete-value: 1

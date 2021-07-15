@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.yzbfp.admin.common.mapper.MerchantMapper">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="top.b0x0.getui.domain.Merchant">
+        <id column="id" property="id"/>
+        <result column="mer_no" property="merNo"/>
+        <result column="upper_id" property="upperId"/>
+        <result column="apply_id" property="applyId"/>
+        <result column="apply_id" property="applyId"/>
+        <result column="mer_name" property="merName"/>
+        <result column="mcc" property="mcc"/>
+        <result column="bank_code" property="bankCode"/>
+        <result column="bank_name" property="bankName"/>
+        <result column="corp_phone" property="corpPhone"/>
+        <result column="corp_name" property="corpName"/>
+        <result column="repulse_freq" property="repulseFreq"/>
+        <result column="area_code" property="areaCode"/>
+        <result column="area" property="area"/>
+        <result column="org_id" property="orgId"/>
+        <result column="org_name" property="orgName"/>
+        <result column="org_user_id" property="orgUserId"/>
+        <result column="org_user_name" property="orgUserName"/>
+        <result column="create_time" property="createTime"/>
+        <result column="update_time" property="updateTime"/>
+        <result column="card_no" property="cardNo"/>
+    </resultMap>
+
+    <!-- 通用查询结果列 -->
+    <sql id="Base_Column_List">
+        id, mer_no, state_audit, upper_id, apply_id, mer_name, mcc, bank_code, bank_name, corp_phone, corp_name, repulse_freq, area_code, area, org_id, org_name, service_id, service_name, org_user_id, create_time, update_time, card_no
+    </sql>
+
+
+</mapper>

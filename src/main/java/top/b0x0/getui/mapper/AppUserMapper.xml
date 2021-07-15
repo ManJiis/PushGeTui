@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.yzbfp.admin.common.mapper.AppUserMapper">
+
+    <!-- 通用查询结果列 -->
+ <sql id="query">
+    <where>
+        <if test="id != null and id != ''">
+            and id = #{id}
+        </if>
+        <if test="userNo != null and userNo != ''">
+            and user_no = #{userNo}
+        </if>
+        <if test="phone != null and phone != ''">
+            and phone = #{phone}
+        </if>
+        <if test="name != null and name != ''">
+            and name = #{name}
+        </if>
+        <if test="status != null and status != ''">
+            and status = #{status}
+        </if>
+        <if test="userType != null and userType != ''">
+            and user_type = #{userType}
+        </if>
+        <if test="paymentPassword != null and paymentPassword != ''">
+            and payment_password = #{paymentPassword}
+        </if>
+         <if test="createTime != null ">
+            and create_time &gt;= #{createTime}
+            <!-- &lt; -->
+         </if>
+         <if test="updateTime != null ">
+            and update_time &gt;= #{updateTime}
+            <!-- &lt; -->
+         </if>
+    </where>
+ </sql>
+
+
+</mapper>
